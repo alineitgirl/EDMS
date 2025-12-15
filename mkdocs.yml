@@ -4,7 +4,7 @@ extra:
 
 site_name: Системы автоматизированного документооборота
 
-site_decription: Лекции по дисциплине САД
+site_description: Лекции по дисциплине САД
 
 site_author: MKDocs Team
 
@@ -16,6 +16,7 @@ nav:
   - Лекция 2: lecture02.md
   - Лекция 3: lecture03.md
   - Лекция 4: lecture04.md
+  - Лекция 5: lecture05.md
 
 theme:
   name: 'material'
