@@ -1,3 +1,12 @@
+name: MkDocs CI/CD with Versions
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
