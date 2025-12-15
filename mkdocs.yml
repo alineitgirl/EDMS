@@ -9,8 +9,6 @@ site_description: Лекции по дисциплине САД
 site_author: MKDocs Team
 
 
-repo-url: https://github.com/alineitgirl/EDMS
-
 nav:
   - Главная: index.md
   - Лекция 1: lecture01.md
@@ -21,6 +19,7 @@ nav:
 
 theme:
   name: 'material'
+  repo-url: https://github.com/alineitgirl/EDMS
   features: 
     - navigation.expand
     - search.highlight
