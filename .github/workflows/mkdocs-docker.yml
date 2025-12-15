@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - 'v*' 
+      - 'v*'
 
 permissions:
   contents: write
@@ -15,10 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Build and test docs
+      - name: Build docs
         run: docker compose run --rm mkdocs mkdocs build --strict
 
       - name: Deploy versioned docs
@@ -34,4 +33,4 @@ jobs:
             VERSION="main"
           fi
 
-          docker compose run --rm mkdocs mike deploy "$VERSION" latest --push
+          docker compose run --rm mkdocs mike deploy $VERSION latest --push
