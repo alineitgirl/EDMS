@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  mkdocs:
+    container_name: mkdocs
+    build: .
+    restart: always
+    ports:
+      - "8005:8000"
+    volumes:
+      - ./:/docs
+    stdin_open: true
+    tty: true

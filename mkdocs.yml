@@ -1,0 +1,25 @@
+extra:
+  version:
+    provider: mike
+
+site_name: Системы автоматизированного документооборота
+
+site_decription: Лекции по дисциплине САД
+
+site_author: MKDocs Team
+
+
+repo-url: 
+nav:
+  - Главная: index.md
+  - Лекция 1: lecture01.md
+  - Лекция 2: lecture02.md
+  - Лекция 3: lecture03.md
+  - Лекция 4: lecture04.md
+
+theme:
+  name: 'material'
+  features: 
+    - navigation.expand
+    - search.highlight
+    - search.suggest
