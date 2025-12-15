@@ -1,6 +1,3 @@
-FROM squidfunk/mkdocs-material:9.7.0
-
-RUN pip install mike
+FROM squidfunk/mkdocs-material:9.5.18
 
 WORKDIR /docs
-
