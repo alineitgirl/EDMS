@@ -1,36 +1,18 @@
-name: MkDocs CI/CD with Versions
-
-on:
-  push:
-    branches:
-      - main
-    tags:
-      - 'v*'
-
-permissions:
-  contents: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
       - name: Build docs
-        run: docker compose run --rm mkdocs mkdocs build --strict
+        run: docker compose run --rm mkdocs build --strict
 
       - name: Deploy versioned docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
+          VERSION="main"
           if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
             VERSION="${GITHUB_REF#refs/tags/}"
-          else
-            VERSION="main"
           fi
-
           docker compose run --rm mkdocs mike deploy $VERSION latest --push
