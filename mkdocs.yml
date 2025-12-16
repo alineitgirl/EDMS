@@ -1,20 +1,24 @@
 site_name: Мой сайт на MkDocs
- 
+
+site_url: https://alineitgirl.github.io/EDMS/  # ← важно для проектного сайта
 repo_url: https://github.com/alineitgirl/EDMS
+
+
 theme:
   name: material
-  language: ru  
+  language: ru
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
+    - navigation.sections      
+    - navigation.expand        
+    - navigation.path          
+    - navigation.indexes       
+    - navigation.top           
     - search.suggest
     - search.highlight
-    - content.code.copy  
-    - content.tabs.link   
+    - content.code.copy
+    - content.tabs.link
   icon:
-    logo: material/book-open-page-variant  
+    logo: material/book-open-page-variant
 
 palette:
   - scheme: default
