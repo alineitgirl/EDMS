@@ -4,21 +4,32 @@ repo_url: https://github.com/alineitgirl/EDMS
 theme:
   name: material
   language: ru  
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: amber
-      toggle:
-        icon: material/brightness-4
-        name: Переключить тёмную тему
   features:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
-    - toc.integrate
     - navigation.top
     - search.suggest
     - search.highlight
+    - content.code.copy  
+    - content.tabs.link   
+  icon:
+    logo: material/book-open-page-variant  
+
+palette:
+  - scheme: default
+    primary: indigo
+    accent: amber
+    toggle:
+      icon: material/weather-sunny
+      name: Переключить на тёмный режим
+
+  - scheme: slate
+    primary: indigo
+    accent: amber
+    toggle:
+      icon: material/weather-night
+      name: Переключить на светлый режим
 
 nav:
   - Главная: index.md
@@ -36,3 +47,5 @@ markdown_extensions:
   - pymdownx.emoji
   - toc:
       permalink: true
+  - attr_list
+  - md_in_html
