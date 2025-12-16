@@ -1,24 +1,30 @@
-name: CI/CD MkDocs
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-  tags:
-    - v*
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Build Docker image
-        run: docker compose build
-
-      - name: Deploy docs to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material
+
+      - name: Build and deploy
+        run: mkdocs gh-deploy --force

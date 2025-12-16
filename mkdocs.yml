@@ -1,13 +1,24 @@
-extra:
-  version:
-    provider: mike
-
-site_name: Системы автоматизированного документооборота
-
-site_description: Лекции по дисциплине САД
-
-site_author: MKDocs Team
-
+site_name: Мой сайт на MkDocs
+ 
+repo_url: https://github.com/alineitgirl/EDMS
+theme:
+  name: material
+  language: ru  
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Переключить тёмную тему
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
 
 nav:
   - Главная: index.md
@@ -17,10 +28,11 @@ nav:
   - Лекция 4: lecture04.md
   - Лекция 5: lecture05.md
 
-theme:
-  name: 'material'
-  repo-url: https://github.com/alineitgirl/EDMS
-  features: 
-    - navigation.expand
-    - search.highlight
-    - search.suggest
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - toc:
+      permalink: true
